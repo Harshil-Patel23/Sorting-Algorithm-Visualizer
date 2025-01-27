@@ -4,6 +4,8 @@ let array = [];
 
 let audioCtx = null;
 
+init();
+
 // Initialize the array and display the bars
 function init() {
   // Get the number of elements from the input field
