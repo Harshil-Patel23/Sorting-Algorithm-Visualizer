@@ -46,6 +46,8 @@ function play() {
 
 // Function to animate the sorting process
 function animate(moves) {
+  const delay = parseInt(document.getElementsByName("delay")[0].value);
+
   if (moves.length == 0) {
     showbars();
     return;
@@ -60,7 +62,7 @@ function animate(moves) {
   showbars(move);
   setTimeout(function () {
     animate(moves);
-  }, 50);
+  }, delay);
 }
 
 // Bubble sort algorithm that tracks swaps

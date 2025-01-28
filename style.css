@@ -1,12 +1,13 @@
 #container {
-  height: 200px;
+  margin-top: -10px;
+  /* background-color: red; */
+  height: 520px;
   display: flex;
   align-items: flex-end;
 }
 
 body {
   flex-direction: column;
-  align-items: center;
   display: flex;
 }
 
@@ -16,4 +17,38 @@ body {
   margin: 1px;
   display: inline-block;
   transition: height 0.2s ease;
+}
+
+.menu {
+  padding: 10px;
+  position: relative;
+  margin-left: 0;
+  background-color: rgb(30, 190, 8);
+  height: 100vh;
+  width: 310px;
+}
+
+.displaysort {
+  /* background-color: bisque; */
+  align-items: center;
+  margin-top: -720px;
+  z-index: 1;
+  margin-left: 400px;
+}
+
+button{
+  font-size: 20px;
+  border-radius: 10px;
+  width: 100px;
+  height: 30px;
+}
+
+button:hover{
+  cursor:pointer;
+  background-color: red;
+  color: white;
+}
+
+.Algorithm{
+  border-radius: 10px; height: 30px;
 }

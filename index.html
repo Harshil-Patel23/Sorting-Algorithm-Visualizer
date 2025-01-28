@@ -7,14 +7,106 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1>🎵 Sorting Visualizer 🎵</h1>
-    Enter number of elements:
-    <input type="number" name="input" value="10" /><br />
-    <div id="container"></div>
-    <hr />
-    <div>
-      <button onclick="init()">Init</button>
-      <button onclick="play()">Play</button>
+    <div class="menu">
+      <h1>Sorting Visualizer By HARSHIL PATEL</h1>
+      <div style="margin-top: -50px">
+        <br /><br /><br />
+        <span style="font-size: 20px; font-weight: bold"
+          >Enter number of elements:</span
+        ><br />
+        <input
+          type="number"
+          name="input"
+          value="90"
+          style="border-radius: 10px; height: 30px"
+        />
+        <br /><br />
+        <span style="font-size: 20px; font-weight: bold"
+          >Choose Sorting Algorithm</span
+        ><br />
+        <select class="Algorithm">
+          <option selected disabled>Choose Sorting Algorithm</option>
+          <option name="bubble" value="bubble">Bubble Sort</option>
+          <option name="insertion" value="insertion">Insertion Sort</option>
+          <option name="quick" value="quick">Quick Sort</option>
+          <option name="selection" value="selection">Selection Sort</option>
+          <option name="merge" value="merge">Merge Sort</option>
+          <option name="radix" value="radix">Radix Sort</option>
+          <option name="bucket" value="bucket">Bucket Sort</option></select
+        ><br />
+        <br />
+        <span style="font-size: 20px; font-weight: bold">Enter delay (ms)</span
+        ><br />
+        <input
+          type="number"
+          name="delay"
+          value="50"
+          style="border-radius: 10px; height: 30px"
+        />
+        <br />
+        <br />
+        <div>
+          <button onclick="init()" name="inti">Initialize</button>
+          <button onclick="play()" name="play">Play</button>
+        </div>
+        <br />
+        <span style="font-size: 20px; font-weight: bold">Time Complexity</span
+        ><br />
+        <br />
+
+        <table>
+          <tr>
+            <td>
+              <span style="font-size: 20px; font-weight: bold">Best case </span>
+            </td>
+            <td>
+              <input
+                readonly
+                type="text"
+                name="Bestcase"
+                style="border-radius: 10px; height: 30px"
+              />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span style="font-size: 20px; font-weight: bold"
+                >Worst case
+              </span>
+            </td>
+            <td>
+              <input
+                readonly
+                type="text"
+                name="Worstcase"
+                style="border-radius: 10px; height: 30px"
+              /><br />
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <span style="font-size: 20px; font-weight: bold"
+                >Aeverage case
+              </span>
+            </td>
+            <td>
+              <input
+                readonly
+                type="text"
+                name="Aeveragecase"
+                style="border-radius: 10px; height: 30px"
+              />
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="displaysort">
+      <h1>🎵 Sorting Visualizer 🎵</h1>
+      <br /><br /><br />
+      <div id="container"></div>
+      <br />
     </div>
     <script src="script.js"></script>
   </body>
