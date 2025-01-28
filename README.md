@@ -21,5 +21,7 @@ git clone https://github.com/Harshil-Patel23/Sorting-Algorithm-Visualizer.git
 
 2. Open the index.html file in the browser.
 3. Enter the number of elements you want.
-4. Click on init button.
-5. Click on play button.
+4. Select the sorting algorithm
+5. Enter delay
+6. Click on init button.
+7. Click on play button.
