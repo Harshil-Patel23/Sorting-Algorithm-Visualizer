@@ -11,7 +11,7 @@
       <h1>Sorting Visualizer By HARSHIL PATEL</h1>
       <div style="margin-top: -50px">
         <br /><br /><br />
-        <span style="font-size: 20px; font-weight: bold"
+        <span style="font-size: 20px; font-weight: bolder"
           >Enter number of elements:</span
         ><br />
         <input
@@ -21,10 +21,10 @@
           style="border-radius: 10px; height: 30px"
         />
         <br /><br />
-        <span style="font-size: 20px; font-weight: bold"
+        <span style="font-size: 20px; font-weight: bolder"
           >Choose Sorting Algorithm</span
         ><br />
-        <select class="Algorithm">
+        <select class="Algorithm" onchange="showcomplexity()">
           <option selected disabled>Choose Sorting Algorithm</option>
           <option name="bubble" value="bubble">Bubble Sort</option>
           <option name="insertion" value="insertion">Insertion Sort</option>
@@ -35,7 +35,8 @@
           <option name="bucket" value="bucket">Bucket Sort</option></select
         ><br />
         <br />
-        <span style="font-size: 20px; font-weight: bold">Enter delay (ms)</span
+        <span style="font-size: 20px; font-weight: bolder"
+          >Enter delay (ms)</span
         ><br />
         <input
           type="number"
@@ -45,60 +46,40 @@
         />
         <br />
         <br />
-        <div>
-          <button onclick="init()" name="inti">Initialize</button>
-          <button onclick="play()" name="play">Play</button>
-        </div>
-        <br />
-        <span style="font-size: 20px; font-weight: bold">Time Complexity</span
+        <span style="font-size: 20px; font-weight: bolder">Time Complexity</span
         ><br />
-        <br />
 
         <table>
           <tr>
             <td>
-              <span style="font-size: 20px; font-weight: bold">Best case </span>
+              <span style="font-size: 20px; font-weight: bolder"
+                >Best case
+              </span>
             </td>
-            <td>
-              <input
-                readonly
-                type="text"
-                name="Bestcase"
-                style="border-radius: 10px; height: 30px"
-              />
-            </td>
+            <td><span name="Bestcase"></span></td>
           </tr>
           <tr>
             <td>
-              <span style="font-size: 20px; font-weight: bold"
-                >Worst case
-              </span>
+              <span style="font-size: 20px; font-weight: bolder"
+                >Worst case</span
+              >
             </td>
-            <td>
-              <input
-                readonly
-                type="text"
-                name="Worstcase"
-                style="border-radius: 10px; height: 30px"
-              /><br />
-            </td>
+            <td><span name="Worstcase"></span></td>
           </tr>
           <tr>
             <td>
-              <span style="font-size: 20px; font-weight: bold"
-                >Aeverage case
-              </span>
+              <span style="font-size: 20px; font-weight: bolder"
+                >Average case</span
+              >
             </td>
-            <td>
-              <input
-                readonly
-                type="text"
-                name="Aeveragecase"
-                style="border-radius: 10px; height: 30px"
-              />
-            </td>
+            <td><span name="Aeveragecase"></span></td>
           </tr>
         </table>
+        <br />
+        <div>
+          <button onclick="init()" name="inti">Initialize</button>
+          <button onclick="play()" name="play">Play</button>
+        </div>
       </div>
     </div>
 
