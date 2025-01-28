@@ -172,6 +172,7 @@ function bubbleSort(array) {
   do {
     var swapped = false;
     for (let i = 1; i < array.length; i++) {
+      //moves.push({ indices: [i - 1, i], type: "compare" });
       if (array[i - 1] > array[i]) {
         swapped = true;
         moves.push({ indices: [i - 1, i], type: "swap" });
@@ -188,7 +189,7 @@ function selectionsort(array) {
     let min_index = i;
     for (let j = i + 1; j < array.length; j++) {
       // Record comparison move
-      moves.push({ indices: [j, min_index], type: "compare" });
+      //moves.push({ indices: [j, min_index], type: "compare" });
       if (array[j] < array[min_index]) {
         min_index = j;
       }
