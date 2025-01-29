@@ -49,9 +49,8 @@ function play() {
       animate(moves);
       break;
     case "insertion":
-      bestCase.innerHTML = "O(n)";
-      worstCase.innerHTML = "O(n²)";
-      averageCase.innerHTML = "O(n²)";
+      const insertionmoves = insertionsort(copy);
+      animate(insertionmoves);
       break;
     case "quick":
       bestCase.innerHTML = "O(n log n)";
@@ -109,8 +108,16 @@ function showbars(move) {
     bar.classList.add("bar");
 
     // Apply color if a move is made (swap or comparison)
-    if (move && move.indices.includes(i)) {
-      bar.style.backgroundColor = move.type === "swap" ? "red" : "blue";
+    if (move) {
+      if (move.indices.includes(i)) {
+        if (move.type === "swap") {
+          bar.style.backgroundColor = "red"; // Swapping (shifting)
+        } else if (move.type === "compare") {
+          bar.style.backgroundColor = "blue"; // Comparing
+        } else if (move.type === "insert") {
+          bar.style.backgroundColor = "green"; // Final insertion
+        }
+      }
     }
 
     container.appendChild(bar);
@@ -172,7 +179,7 @@ function bubbleSort(array) {
   do {
     var swapped = false;
     for (let i = 1; i < array.length; i++) {
-      //moves.push({ indices: [i - 1, i], type: "compare" });
+      moves.push({ indices: [i - 1, i], type: "compare" });
       if (array[i - 1] > array[i]) {
         swapped = true;
         moves.push({ indices: [i - 1, i], type: "swap" });
@@ -189,7 +196,7 @@ function selectionsort(array) {
     let min_index = i;
     for (let j = i + 1; j < array.length; j++) {
       // Record comparison move
-      //moves.push({ indices: [j, min_index], type: "compare" });
+      moves.push({ indices: [j, min_index], type: "compare" });
       if (array[j] < array[min_index]) {
         min_index = j;
       }
@@ -199,6 +206,23 @@ function selectionsort(array) {
       moves.push({ indices: [i, min_index], type: "swap" });
       [array[i], array[min_index]] = [array[min_index], array[i]];
     }
+  }
+  return moves;
+}
+
+function insertionsort(array) {
+  const moves = [];
+  for (let i = 1; i < array.length; i++) {
+    var key = array[i];
+    var j = i - 1;
+    while (j >= 0 && array[j] > key) {
+      moves.push({ indices: [j, j + 1], type: "compare" });
+      array[j + 1] = array[j];
+      moves.push({ indices: [j, j + 1], type: "swap" });
+      j--;
+    }
+    array[j + 1] = key;
+    moves.push({ indices: [j + 1, i], type: "insert" }); // Insert move
   }
   return moves;
 }
